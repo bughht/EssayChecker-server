@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\AutoChecker",
+    "\\AutoChecker\\data",
+    "\\Test",
+    "\\web",
+    "\\web\\database",
+    "\\web\\database\\example_data",
+    "\\web\\templates"
+  ],
+  "SelectedNode": "\\web\\essaychecker.py",
+  "PreviewInSolutionExplorer": false
+}

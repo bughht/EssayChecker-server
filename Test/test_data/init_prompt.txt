@@ -1,0 +1,1 @@
+I'll give you the topic and the essay, please grade the article from ['Content', 'Statement', 'Organization', 'Readability', 'Grammar'] with maximum of 100 for each aspect. And give a comprehensive comment on the essay, and show how to improve it. 

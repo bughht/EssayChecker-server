@@ -20,8 +20,8 @@ comment_grammar = []
 comment_overall = []
 
 for demo_id in range(3):
-    path_essay = "backend/database/example_data/essay{}.txt".format(demo_id)
-    path_topic = "backend/database/example_data/topic{}.txt".format(demo_id)
+    path_essay = "web/database/example_data/essay{}.txt".format(demo_id)
+    path_topic = "web/database/example_data/topic{}.txt".format(demo_id)
 
     data_essay = open(path_essay, "r").readlines()
     data_topic = open(path_topic, "r").readlines()
@@ -129,34 +129,34 @@ df = pd.DataFrame({
     topic,
     "Essay":
     essay,
-    "Mark_Content":
+    "Content_Mark":
     mark_content,
-    "Comment_Content":
+    "Content_Comment":
     comment_content,
-    "Mark_Statement":
+    "Statement_Mark":
     mark_statement,
-    "Comment_Statement":
+    "Statement_Comment":
     comment_statement,
-    "Mark_Organization":
+    "Organization_Mark":
     mark_organization,
-    "Comment_Organization":
+    "Organization_Comment":
     comment_organization,
-    "Mark_Readability":
+    "Readability_Mark":
     mark_readability,
-    "Comment_Readability":
+    "Readability_Comment":
     comment_readability,
-    "Mark_Grammar":
+    "Grammar_Mark":
     mark_grammar,
-    "Comment_Grammar":
+    "Grammar_Comment":
     comment_grammar,
-    "Mark_Overall":
+    "Overall_Mark":
     np.mean([
         mark_content, mark_statement, mark_organization, mark_readability,
         mark_grammar
     ],
-            axis=0),
-    "Comment_Overall":
+        axis=0),
+    "Overall_Comment":
     comment_overall
 })
 
-df.to_csv("backend/database/data.csv", index=False)
+df.to_csv("web/database/data.csv", index=False)

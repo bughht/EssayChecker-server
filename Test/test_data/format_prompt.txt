@@ -1,0 +1,27 @@
+Your output will be parsed and type-checked according to the provided schema instance, so make sure all fields in your output match exactly!
+Here is the JSON Schema instance your output must adhere to:
+
+'''json
+{"Content": 
+  Mark: 
+  Comment: 
+
+Statement: 
+  Mark: 
+  Comment: 
+
+Organization: 
+  Mark: 
+  Comment: 
+
+Readability: 
+  Mark: 
+  Comment: 
+
+Grammar: 
+  Mark: 
+  Comment: 
+
+Overall Comment:
+}
+```

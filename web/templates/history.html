@@ -3,21 +3,53 @@
 
 <head>
     <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 
 <body>
-    <title>This is history</title>
-    {% if data%}
-    <h1>Data Found!{{ name }}!</h1>
-    {% else %}
-    <h1>Data Not Found!</h1>
-    {% endif %}
+    <title>EssayGPT</title>
+    <h1>EssayGPT</h1>
+    <p_italic>A GPT-based essay checker.</p_italic>
+    <h2>Statics Result</h2>
+    <div id='plot'>
+        <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
+    <script>
+        var graphJSON = {{ graphJSON | safe }};
 
-    {%if id%}
-    <p>Now work with id {{id}}</p>
-    {%else%}
-    <p>Now work with history page</p>
-    {%endif%}
+        // Use the `plotly` object to draw the chart
+        Plotly.newPlot('plot', graphJSON.data, graphJSON.layout);
+    </script>
+
+    <h2>Mark Table</h2>
+    <table>
+        <tr width="100%">
+            {% for header in headings%}
+            <th>{{header}}</th>
+            {% endfor %}
+        </tr>
+        {% for row in data %}
+        <tr width="100%">
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <h2>Topic History</h2>
+    <table>
+        <tr>
+            {% for header in theadings %}
+            <th>{{header}}</th>
+            {% endfor %}
+        </tr>
+        {% for row in ttable %}
+        <tr>
+            <td> <a href="/history/{{row[0]}}">{{row[0]}}</a></td>
+            <td> {{row[1]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 
 </html>

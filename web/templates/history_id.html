@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+    <title>Essay Details</title>
+    <h1>Essay Details</h1>
+
+    <h2>Topic</h2>
+    <p_topic>{{topic}}</p_topic>
+    <h2>Essay</h2>
+    <p_essay>{{essay}}</p_essay>
+    <h2>Mark</h2>
+    <div id='plot'>
+        <!-- Plotly chart will be drawn inside this DIV -->
+    </div>
+    <script>
+        // Load the JSON data into a variable
+        var graphJSON = {{ graphJSON | safe }};
+
+        // Use the `plotly` object to draw the chart
+        Plotly.newPlot('plot', graphJSON.data, graphJSON.layout);
+    </script>
+    <h2>Comment</h2>
+    <div>{{ table_comment|safe }}</div>
+</body>

@@ -5,7 +5,6 @@ import hashlib
 import time
 import requests
 import json
-import jsonpath
 URL = "https://webapi.xfyun.cn/v1/service/v1/ocr/handwriting"
 APPID = '347f4226'
 API_KEY = "ca0b732b1ebc17a08b2980109516fd91"
